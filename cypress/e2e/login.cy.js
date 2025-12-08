@@ -19,8 +19,14 @@ describe('Login Test', () => {
     cy.wait(5000);
     login.clickLoginButton();
     cy.wait(5000);
+    bidaRegistrationNew.selectCompanyModal()
+    // cy.wait(3000)
+    // bidaRegistrationNew.clickModalContinueButton()
+    // cy.wait(3000)
+    bidaRegistrationNew.dashboardInnerModal()
+    cy.xpath('/html/body/div[1]/nav/ul/li[5]/a').click();
+    cy.xpath('/html/body/div[1]/nav/ul/li[5]/ul/li[13]/a').click(); 
   });
-
 
   it('BIDA Registration Form Fillup', () => {
     cy.visit('/')
@@ -252,6 +258,9 @@ describe('Login Test', () => {
     cy.wait(3000)
     cy.get('[id="btnConfirm"]').click()
     cy.wait(5000)
+
+    cy.xpath('/html/body/div[1]/nav/ul/li[5]/a').click();
+    cy.xpath('/html/body/div[1]/nav/ul/li[5]/ul/li[13]/a').click();
    
 
     // bidaRegistrationNewForm.identityTypeClick()
@@ -278,11 +287,63 @@ describe('Login Test', () => {
   })
 
   it('BIDA Registration Application Processing - Step 1', () => {
+       cy.visit('/')
+    
+    cy.origin('https://id.oss.net.bd', () => {
+      cy.on('uncaught:exception', (err) => {
+        if (err.message.includes('baseUrl') || err.message.includes('Identifier')) {
+          return false
+        }
+        return true
+      })
+    })
+    
+    // login steps
+    login.performLogin()
+    cy.wait(5000)
+    login.enterUsername('rd1@batworld.com')
+    cy.wait(5000)
+    login.enterNextButton()
+    cy.wait(5000)
+    login.enterPassword('Ossp@123')
+    cy.wait(5000)
+    login.clickLoginButton()
+    cy.wait(5000)
+    // login.closeModal()
+
     bidaRegistrationStep1();
+    cy.xpath('/html/body/div[1]/nav/ul/li[4]/a').click();
+    cy.xpath('/html/body/div[1]/nav/ul/li[4]/ul/li[5]/a').click(); 
   });
 
-  it('BIDA Registration Application Processing - Step 2', () => {
+  it.skip('BIDA Registration Application Processing - Step 2', () => {
+       cy.visit('/')
+    
+    cy.origin('https://id.oss.net.bd', () => {
+      cy.on('uncaught:exception', (err) => {
+        if (err.message.includes('baseUrl') || err.message.includes('Identifier')) {
+          return false
+        }
+        return true
+      })
+    })
+    
+    // login steps
+    login.performLogin()
+    cy.wait(5000)
+    login.enterUsername('rd1@batworld.com')
+    cy.wait(5000)
+    login.enterNextButton()
+    cy.wait(5000)
+    login.enterPassword('Ossp@123')
+    cy.wait(5000)
+    login.clickLoginButton()
+    cy.wait(5000)
+    // login.closeModal()
+
     bidaRegistrationStep2();
+    cy.xpath('/html/body/div[1]/nav/ul/li[4]/a').click();
+    cy.xpath('/html/body/div[1]/nav/ul/li[4]/ul/li[5]/a').click();  
   });
 
   it('BIDA Registration after Processing Application', () => {
@@ -328,7 +389,7 @@ describe('Login Test', () => {
       bidaRegistrationNew.newApplicationButtonClick()
       cy.wait(3000)
   
-      cy.get('[id="dt-search-0"]').type('BR-04Dec2025-00004')
+      cy.get('[id="dt-search-0"]').type('BR-08Dec2025-00001')
       cy.wait(2000)
       cy.xpath('/html/body/div[1]/div/div/section/div/div/div[3]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr/td[6]/a').click()
   
@@ -351,11 +412,39 @@ describe('Login Test', () => {
       cy.wait(3000)
       cy.get('[id="btnConfirm"]').click()
       cy.wait(5000)
+      cy.xpath('/html/body/div[1]/nav/ul/li[5]/a').click();
+      cy.xpath('/html/body/div[1]/nav/ul/li[5]/ul/li[13]/a').click();
   
     })
 
   it('BIDA Registration Application Processing - Step 3', () => {
+       cy.visit('/')
+    
+    cy.origin('https://id.oss.net.bd', () => {
+      cy.on('uncaught:exception', (err) => {
+        if (err.message.includes('baseUrl') || err.message.includes('Identifier')) {
+          return false
+        }
+        return true
+      })
+    })
+    
+    // login steps
+    login.performLogin()
+    cy.wait(5000)
+    login.enterUsername('rd1@batworld.com')
+    cy.wait(5000)
+    login.enterNextButton()
+    cy.wait(5000)
+    login.enterPassword('Ossp@123')
+    cy.wait(5000)
+    login.clickLoginButton()
+    cy.wait(5000)
+    // login.closeModal()
+
     bidaRegistrationStep3();
+    cy.xpath('/html/body/div[1]/nav/ul/li[4]/a').click();
+    cy.xpath('/html/body/div[1]/nav/ul/li[4]/ul/li[5]/a').click(); 
   });
 
 

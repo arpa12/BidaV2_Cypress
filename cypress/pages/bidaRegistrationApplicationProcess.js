@@ -4,7 +4,7 @@ export const bidaRegistrationStep1 = () => {
   cy.wait(2000);
   cy.xpath('/html/body/div[1]/nav/div[4]/div/ul/li[2]/ul/li[1]/a').click();
   cy.wait(5000);
-  cy.get('[id="dt-search-0"]').type('BR-07Dec2025-00002');
+  cy.xpath('/html/body/div[1]/div/div/section/div/div/div[3]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr[1]/td[6]/a',{ timeout: 15000 }).should('be.visible').eq(0).click()
   cy.wait(2000);
   cy.xpath('/html/body/div[1]/div/div/section/div/div/div[3]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr/td[6]/a').click();
   cy.wait(5000);
@@ -25,7 +25,7 @@ export const bidaRegistrationStep2 = () => {
   cy.wait(2000);
   cy.xpath('/html/body/div[1]/nav/div[4]/div/ul/li[2]/ul/li[1]/a').click();
   cy.wait(5000);
-  cy.get('[id="dt-search-0"]').type('BR-07Dec2025-00002');
+   cy.xpath('/html/body/div[1]/div/div/section/div/div/div[3]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr[1]/td[6]/a',{ timeout: 15000 }).should('be.visible').eq(0).click()
   cy.wait(2000);
   cy.xpath('/html/body/div[1]/div/div/section/div/div/div[3]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr/td[6]/a').click();
   cy.wait(5000);
@@ -42,7 +42,7 @@ export const bidaRegistrationStep3 = () => {
   cy.wait(2000);
   cy.xpath('/html/body/div[1]/nav/div[4]/div/ul/li[2]/ul/li[1]/a').click();
   cy.wait(5000);
-  cy.get('[id="dt-search-0"]').type('BR-07Dec2025-00002');
+   cy.xpath('/html/body/div[1]/div/div/section/div/div/div[3]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr[1]/td[6]/a',{ timeout: 15000 }).should('be.visible').eq(0).click()
   cy.wait(2000);
   cy.xpath('/html/body/div[1]/div/div/section/div/div/div[3]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr/td[6]/a').click();
   cy.wait(5000);
